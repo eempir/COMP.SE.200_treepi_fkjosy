@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  test-and-coverage:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,9 +26,9 @@ jobs:
 
     - name: Run tests with coverage
       run: npm test
-      continue-on-error: true
 
     - name: Upload coverage to Coveralls
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
