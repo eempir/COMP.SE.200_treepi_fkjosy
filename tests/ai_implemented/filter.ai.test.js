@@ -1,7 +1,7 @@
 import filter from '../../src/filter';
 import { jest } from '@jest/globals';
 
-describe('filter', () => {
+describe('filter (AI generated tests)', () => {
   // 1. Basic Functionality (Happy Path)
   test('should filter elements based on the predicate', () => {
     const array = [1, 2, 3, 4, 5];
